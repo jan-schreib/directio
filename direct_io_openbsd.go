@@ -1,0 +1,22 @@
+// Direct IO for Unix
+
+// +build openbsd
+
+package directio
+
+import (
+	"os"
+)
+
+const (
+	// Size to align the buffer to
+	AlignSize = 4096
+
+	// Minimum block size
+	BlockSize = 4096
+)
+
+// OpenFile is a modified version of os.OpenFile which sets O_DIRECT
+func OpenFile(name string, flag int, perm os.FileMode) (file *os.File, err error) {
+	return os.OpenFile(name, flag, perm)
+}

@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ncw/directio"
+        "github.com/jan-schreib/directio"
 )
 
 func TestDirectIo(t *testing.T) {
